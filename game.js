@@ -75,12 +75,12 @@ function countNeighbors(x, y) {
 }
 
 function clear() {
-grid = new Array(rows)
-prevGrid = new Array(rows)
-for (let i = 0; i < rows; i++) {
-    grid[i] = new Array(cols).fill(0)
-    prevGrid[i] = new Array(cols).fill(0)
-}
+    grid = new Array(rows)
+    prevGrid = new Array(rows)
+    for (let i = 0; i < rows; i++) {
+        grid[i] = new Array(cols).fill(0)
+        prevGrid[i] = new Array(cols).fill(0)
+    }
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     net()
     gameRunning = false
@@ -130,19 +130,30 @@ function gameLoop() {
     }
 }
 
-function next(){
-gameRunning = false
-drawGrid()
-updateGrid()
+function next() {
+    gameRunning = false
+    drawGrid()
+    updateGrid()
 }
 
 function previous() {
-    gameRunning = false;
-    if (grids.length > 1) {
+    if (grids.length > 0) {
+        gameRunning = false;
         grid = grids.pop();
-        prevGrid = grids[grids.length - 1] || new Array(rows).fill(new Array(cols).fill(0));
-        drawGrid();
-    } 
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        net();
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < cols; j++) {
+                if (grid[i][j] === 1) {
+                    let img = new Image();
+                    img.src = 'img/new.png';
+                    img.onload = () => {
+                        ctx.drawImage(img, j * cellW, i * cellH, cellW, cellH);
+                    };
+                }
+            }
+        }
+    }
 }
 
 net()
@@ -151,5 +162,5 @@ canvas.addEventListener('click', filling)
 document.getElementById('start').addEventListener('click', startGame)
 document.getElementById('stop').addEventListener('click', stopGame)
 document.getElementById('clear').addEventListener('click', clear)
-document.getElementById('next').addEventListener('click',next)
-document.getElementById('previous').addEventListener('click',previous)
+document.getElementById('next').addEventListener('click', next)
+document.getElementById('previous').addEventListener('click', previous)
