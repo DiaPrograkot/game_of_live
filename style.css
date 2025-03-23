@@ -19,7 +19,7 @@ header {
 
 header a {
 font-family: 'Comic Sans MS', cursive;
-font-size:calc(22px + 8 * (100vw - 320px) / 880);
+font-size:4vw;
 padding: 1rem;  
 color: #fff;
   transition: transform 0.2s ease-in-out;
