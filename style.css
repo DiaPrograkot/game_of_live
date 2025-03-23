@@ -19,8 +19,9 @@ header {
 
 header a {
 font-family: 'Comic Sans MS', cursive;
-  font-size: 4em;
-  color: #fff;
+font-size:calc(22px + 8 * (100vw - 320px) / 880);
+padding: 1rem;  
+color: #fff;
   transition: transform 0.2s ease-in-out;
   text-decoration: none;
 }
@@ -45,7 +46,7 @@ aside, #simb {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   width: 90%;
-  max-width: 400px;
+  max-width: 350px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   line-height: 1.6;
