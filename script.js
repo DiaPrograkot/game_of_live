@@ -98,7 +98,7 @@ function updateGrid() {
 function gameLoop() {
   drawGrid()
   updateGrid()
-  setTimeout(gameLoop, 3000)
+  setTimeout(gameLoop, 1000)
 }
 
 randomFilling()

@@ -134,7 +134,7 @@ function gameLoop() {
     if (gameRunning) {
         drawGrid()
         updateGrid()
-        setTimeout(gameLoop, 3000)
+        setTimeout(gameLoop, 1000)
     }
 }
 
