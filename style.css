@@ -14,12 +14,12 @@ header {
   justify-content: space-around;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 1 rem;
 }
 
 header a {
 font-family: 'Comic Sans MS', cursive;
-  font-size: 4rem;
+  font-size: 4em;
   color: #fff;
   transition: transform 0.2s ease-in-out;
   text-decoration: none;
@@ -36,13 +36,16 @@ header a:hover {
   margin: 2rem;
   height: 90%;
   align-items: center;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 
-aside {
+aside, #simb {
   background: #fff;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   line-height: 1.6;
@@ -50,13 +53,6 @@ aside {
 
 #simb {
   margin-top: 1rem;
-  background: #fff;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  width: 400px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  line-height: 1.6;
 }
 
 aside h2, #simb h2 {
@@ -71,8 +67,10 @@ flex-direction: row;
 }
 
 #buttons{
+  display: flex;
   font-size: 70px;
   color: #991ad4;
+  max-width: 100%;
 }
 
 .rip{
@@ -95,6 +93,7 @@ aside li {
 }
 
 canvas {
+  max-width: 100%;
   border: 2px solid #cb6ef6;
   border-radius: 12px;
   background-color: #fff;
