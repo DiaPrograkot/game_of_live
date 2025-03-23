@@ -8,6 +8,7 @@ const cellH = canvas.height / rows
 
 const grids = []
 let gameRunning = false
+let lastButton = null
 
 function net() {
     for (let i = 1; i < cols; i++) {
@@ -163,11 +164,32 @@ function previous() {
     }
 }
 
+function updateColorButton(but){
+if (lastButton) lastButton.style.color = "#991ad4"
+but.style.color = "#9b9b9b"
+lastButton = but
+}
+
 net()
 
 canvas.addEventListener('click', filling)
-document.getElementById('start').addEventListener('click', startGame)
-document.getElementById('stop').addEventListener('click', stopGame)
-document.getElementById('clear').addEventListener('click', clear)
-document.getElementById('next').addEventListener('click', next)
-document.getElementById('previous').addEventListener('click', previous)
+document.getElementById('start').addEventListener('click', function (){
+updateColorButton(this)
+startGame()
+})
+document.getElementById('stop').addEventListener('click', function (){
+    updateColorButton(this)
+stopGame()
+})
+document.getElementById('clear').addEventListener('click', function (){
+    updateColorButton(this)
+    clear()
+})
+document.getElementById('next').addEventListener('click', function (){
+    updateColorButton(this)
+    next()
+})
+document.getElementById('previous').addEventListener('click', function (){
+    updateColorButton(this)
+    previous()
+})
