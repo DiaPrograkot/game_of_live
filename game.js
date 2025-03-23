@@ -40,22 +40,29 @@ function filling(event) {
     if (!gameRunning) {
         let x = Math.floor(event.offsetX / cellW)
         let y = Math.floor(event.offsetY / cellH)
-        grid[y][x] = 1
-        drawGrid()
+        grid[y][x] = grid[y][x] === 1 ? 0 : 1;
+        drawGrid();
     }
 }
 
 function drawGrid() {
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < cols; j++) {
-            let img = new Image()
             if (grid[i][j] == 1) {
-                img.src = 'img/new.png'
+                let img = new Image();
+                img.src = 'img/new.png';
+                img.onload = () => {
+                    ctx.drawImage(img, j * cellW, i * cellH, cellH, cellW);
+                }
             } else if (prevGrid[i][j] == 1) {
-                img.src = 'img/rip.png'
-            }
-            img.onload = () => {
-                ctx.drawImage(img, j * cellW, i * cellH, cellH, cellW)
+                let img = new Image();
+                img.src = 'img/rip.png';
+                img.onload = () => {
+                    ctx.drawImage(img, j * cellW, i * cellH, cellH, cellW);
+                }
+            } else {
+                ctx.clearRect(j * cellW, i * cellH, cellW, cellH);
+                net()
             }
         }
     }

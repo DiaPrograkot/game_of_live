@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,44 +8,57 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="img/fav.png" type="image/x-icon" />
 </head>
+
 <body>
     <header>
         <a href="index.html">Главная</a>
     </header>
     <div class="game-container">
         <div id="meow">
-        <aside>
-            <h2>Правила игры:</h2>
-            <ul>
-                <li>мёртвая клетка становится живой, если рядом с ней находятся ровно три живые клетки;</li>
-                <li>если живую клетку окружают две или три живые клетки, то эта клетка остаётся живой; в противном случае клетка становится мёртвой.</li>
-            </ul>
-        </aside>
-        <div id="simb">
-           <h2>Условные обозначения:</h2> 
-        <div id="rrr">
-        <div>
-           <img src="img/new.png" alt="alive" width="40" height="40">
-           <img src="img/rip.png" alt="rip" width="40" height="40">
+            <aside>
+                <h2>Правила игры:</h2>
+                <ul>
+                    <li>мёртвая клетка становится живой, если рядом с ней находятся ровно три живые клетки;</li>
+                    <li>если живую клетку окружают две или три живые клетки, то эта клетка остаётся живой; в противном
+                        случае клетка становится мёртвой.</li>
+                </ul>
+            </aside>
+            <div id="simb">
+                <h2>Условные обозначения:</h2>
+                <div id="rrr">
+                    <div>
+                        <img src="img/new.png" alt="alive" width="30" height="30">
+                        <img src="img/rip.png" alt="rip" width="30" height="30">
+                        <div style="font-size: 30px;color: #991ad4;">▶</div>
+                        <div style="font-size: 30px;color: #991ad4;">❚❚</div>
+                        <div style="font-size: 30px;color: #991ad4;">🢂</div>
+                        <div style="font-size: 30px;color: #991ad4;">🢀</div>
+                        <div style="font-size: 30px;color: #991ad4;"><b>✖</b></div>
+                    </div>
+                    <div>
+                        <div>- живые клетки</div>
+                        <div>- погибшие клетки из предыдущего поколения</div>
+                        <div>- автоматический переход к следущему поколению</div>
+                        <div style="margin-top: 5px;">- пауза</div>
+                        <div class="rip">- следущее поколение</div>
+                        <div class="rip">- предыдущее поколение</div>
+                        <div class="rip">- очистить сетку</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <div>- живые клетки</div>
-            <div id="rip">- погибшие клетки из предыдущего поколения</div>
+        <div id="box">
+            <canvas id="game" width="1300" height="650"></canvas>
+            <div id="buttons">
+                <span id="start">▶</span>
+                <span id="stop">❚❚</span>
+                <span id="next">🢂</span>
+                <span id="previous">🢀</span>
+                <span id="clear"><b>✖</b></span>
+            </div>
         </div>
-    </div>
-    </div> 
-    </div>
-    <div id="box">
-        <canvas id="game" width="1300" height="650"></canvas>
-        <div id="buttons">
-            <span id="start">▶</span>
-            <span id="stop">❚❚</span>
-            <span id="next">🢂</span>
-            <span id="previous">🢀</span>
-            <span id="clear"><b>✖</b></span>
-        </div>
-    </div>
     </div>
     <script src="game.js"></script>
 </body>
+
 </html>

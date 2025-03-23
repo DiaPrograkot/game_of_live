@@ -34,13 +34,14 @@ header a:hover {
   justify-content: center;
   gap: 2rem;
   margin: 2rem;
-  width: 98%;
+  height: 90%;
   align-items: center;
 }
 
 aside {
   background: #fff;
-  padding: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   width: 400px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -50,7 +51,8 @@ aside {
 #simb {
   margin-top: 1rem;
   background: #fff;
-  padding: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   width: 400px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -73,8 +75,8 @@ flex-direction: row;
   color: #991ad4;
 }
 
-#rip{
-margin-top: 20px;  
+.rip{
+margin-top: 22px;  
 display: flex;
 }
 
